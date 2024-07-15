@@ -63,11 +63,13 @@ const Skills = () => {
                   </Link>
                 </div>
                 {/* heading */}
-                <h2>{experience.title}</h2>
+                <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">{experience.title}</h2>
                 {/* description */}
-                <p>{experience.description}</p>
+                <p className="text-white/60">{experience.description}</p>
                 {/* border */}
                 <div className="border-b border-white/20 w-full"></div>
+                {/* to add: links */}
+                
               </div>
             );
           })}
