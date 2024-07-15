@@ -17,6 +17,7 @@ import {
   SiTensorflow,
   SiScikitlearn,
   SiPostgresql,
+  SiKeras,
 } from "react-icons/si";
 
 //ABOUT DATA
@@ -115,6 +116,10 @@ const skills = {
     {
       icon: <SiTensorflow />,
       NAME: "Tensorflow",
+    },
+    {
+      icon: <SiKeras />,
+      NAME: "Keras",
     },
     {
       icon: <SiScikitlearn />,
