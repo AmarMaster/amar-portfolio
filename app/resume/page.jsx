@@ -20,6 +20,13 @@ import {
   SiKeras,
 } from "react-icons/si";
 
+import {
+  Tooltip,
+  TooltipProvider,
+  TooltipTrigger,
+  TooltipContent,
+} from "@/components/ui/tooltip";
+
 //ABOUT DATA
 const about = {
   title: "About me",
