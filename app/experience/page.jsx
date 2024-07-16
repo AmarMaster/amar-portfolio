@@ -8,25 +8,25 @@ const experiences = [
     num: "01",
     title: "Blue Dome Technologies",
     description: "Software Engineering Intern ~ Jun 2024 - Present ~ Remote",
-    href: "",
+    href: "https://bluedometech.com",
   },
   {
     num: "02",
     title: "Iraje PAM Solutions",
     description: "Software Engineering Intern ~ May 2024 - Present ~ On-Site",
-    href: "",
+    href: "https://www.iraje.com",
   },
   {
     num: "03",
     title: "Iraje PAM Solutions",
     description: "Software Engineering Intern ~ Apr - Sep 2023 ~ On-Site",
-    href: "",
+    href: "https://www.iraje.com",
   },
   {
     num: "04",
     title: "Science Kidz Labs",
     description: "Robotics Mentor ~ May 2018 - Sep 2021 ~ On-Site",
-    href: "",
+    href: "https://www.linkedin.com/company/sciencekidz/",
   },
 ];
 
@@ -63,13 +63,14 @@ const Skills = () => {
                   </Link>
                 </div>
                 {/* heading */}
-                <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">{experience.title}</h2>
+                <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">
+                  {experience.title}
+                </h2>
                 {/* description */}
                 <p className="text-white/60">{experience.description}</p>
                 {/* border */}
                 <div className="border-b border-white/20 w-full"></div>
                 {/* to add: links */}
-                
               </div>
             );
           })}
