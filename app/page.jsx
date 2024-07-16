@@ -17,7 +17,7 @@ const Home = () => {
             {/* changes order to switch left to right */}
             <span className="text-xl">Software Developer</span>
             <h1 className="h1">
-              Hello I'm <br />
+              Hello I'm <br /> {/* remove hello ? !!! */}
               <span className="text-accent"> Amar Master</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">

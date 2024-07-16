@@ -8,7 +8,7 @@ import {
   FaJs,
   FaReact,
   FaNodeJs,
-  FaSQL,
+  FaDatabase,
 } from "react-icons/fa";
 
 import {
@@ -20,41 +20,34 @@ import {
   SiKeras,
 } from "react-icons/si";
 
-import {
-  Tooltip,
-  TooltipProvider,
-  TooltipTrigger,
-  TooltipContent,
-} from "@/components/ui/tooltip";
-
 //ABOUT DATA
 const about = {
   title: "About me",
   description: "bleh bleh bleh",
   info: [
     {
-      fieldnAME: "Name",
+      fieldname: "Name",
       fieldValue: "Amar Master",
     },
     {
-      fieldnAME: "Phone (US)",
+      fieldname: "Phone (US)",
       fieldValue: "(+1) 413-949-3383",
     },
     {
-      fieldnAME: "Phone (India)",
+      fieldname: "Phone (India)",
       fieldValue: "+91 96533-51363",
     },
     {
-      fieldnAME: "Email",
+      fieldname: "Email",
       fieldValue: "amar.master.work@gmail.com",
     },
     {
-      fieldnAME: "Experience",
-      fieldValue: "2 years and counting!",
+      fieldname: "Experience",
+      fieldValue: "2 years",
     },
     {
-      fieldnAME: "Languages",
-      fieldValue: "English, German, Gujarati, Hindi, Marathi",
+      fieldname: "Languages",
+      fieldValue: "English Gujarati Hindi Marathi",
     },
   ],
 };
@@ -110,72 +103,34 @@ const education = {
 //SKILLS
 const skills = {
   title: "My skills:",
-  description: "bleh bleh bleh",
+  description:
+    "Here are some of the technologies and tools I have experience with:",
   skillList: [
-    {
-      icon: <FaPython />,
-      NAME: "Python",
-    },
-    {
-      icon: <FaJava />,
-      NAME: "Java",
-    },
-    {
-      icon: <SiTensorflow />,
-      NAME: "Tensorflow",
-    },
-    {
-      icon: <SiKeras />,
-      NAME: "Keras",
-    },
-    {
-      icon: <SiScikitlearn />,
-      NAME: "Scikit",
-    },
-    {
-      icon: <FaHtml5 />,
-      NAME: "HTML 5",
-    },
-    {
-      icon: <FaCss3 />,
-      NAME: "CSS 3",
-    },
-    {
-      icon: <FaJs />,
-      NAME: "JavaScript",
-    },
-    {
-      icon: <FaReact />,
-      NAME: "React",
-    },
-    {
-      icon: <SiTailwindcss />,
-      NAME: "Tailwind",
-    },
-    {
-      icon: <SiNextdotjs />,
-      NAME: "Next",
-    },
-    {
-      icon: <FaNodeJs />,
-      NAME: "Node",
-    },
-    {
-      icon: <FaSQL />,
-      NAME: "SQL",
-    },
-    {
-      icon: <SiPostgresql />,
-      NAME: "PostgreSQL",
-    },
+    { icon: <FaPython />, name: "Python" },
+    { icon: <FaJava />, name: "Java" },
+    { icon: <SiTensorflow />, name: "TensorFlow" },
+    { icon: <SiKeras />, name: "Keras" },
+    { icon: <SiScikitlearn />, name: "Scikit-learn" },
+    { icon: <FaHtml5 />, name: "HTML5" },
+    { icon: <FaCss3 />, name: "CSS3" },
+    { icon: <FaJs />, name: "JavaScript" },
+    { icon: <FaReact />, name: "React" },
+    { icon: <SiTailwindcss />, name: "Tailwind CSS" },
+    { icon: <SiNextdotjs />, name: "Next.js" },
+    { icon: <FaNodeJs />, name: "Node.js" },
+    { icon: <FaDatabase />, name: "SQL" },
+    { icon: <SiPostgresql />, name: "PostgreSQL" },
   ],
 };
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-{
-  /* tooltips */
-}
+import {
+  Tooltip,
+  TooltipProvider,
+  TooltipTrigger,
+  TooltipContent,
+} from "@/components/ui/tooltip";
 
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
@@ -205,12 +160,28 @@ const Resume = () => {
           {/* content */}
           <div className="min-h-[70vh] w-full">
             {/* about me */}
-            <TabsContent value="about me" className="w-full">
+            <TabsContent
+              value="about me"
+              className="w-full text-center xl:text-center"
+            >
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{about.title}</h3>
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                   {about.description}
                 </p>
+                <ul className="grid gfrid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[820px] mx-auto xl:mx-0">
+                  {about.info.map((item, index) => {
+                    return (
+                      <li
+                        key={index}
+                        className="flex items-center justify-center xl:justify-start gap-4"
+                      >
+                        <span className="text-white/60">{item.fieldname}</span>
+                        <span className="text-xl">{item.fieldValue}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
               </div>
             </TabsContent>
             {/* education */}
@@ -284,11 +255,28 @@ const Resume = () => {
                     {skills.description}
                   </p>
                 </div>
-                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:gap-[30px]">
-                  {skills.skillList.map((skill, index) => {
-                    return <li key={index}>{skill.NAME}</li>;
-                  })}
-                </ul>
+                <ScrollArea className="h-[400px]">
+                  <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
+                    {skills.skillList.map((skill, index) => {
+                      return (
+                        <li key={index}>
+                          <TooltipProvider delayDuration={100}>
+                            <Tooltip>
+                              <TooltipTrigger className="w-full h-[150px] bg-[#333333] rounded-xl flex justify-center items-center group">
+                                <div className="text-6xl group-hover:text-accent transition-all duration-300">
+                                  {skill.icon}
+                                </div>
+                              </TooltipTrigger>
+                              <TooltipContent>
+                                <p className="capitalize">{skill.name}</p>
+                              </TooltipContent>
+                            </Tooltip>
+                          </TooltipProvider>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </ScrollArea>
               </div>
             </TabsContent>
           </div>

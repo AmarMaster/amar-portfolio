@@ -12,8 +12,8 @@ const stats = [
     text: "Projects completed",
   },
   {
-    num: 12,
-    text: "Technologies mastered",
+    num: 14,
+    text: "Languages & Technologies",
   },
 ];
 const Stats = () => {
