@@ -24,10 +24,10 @@ module.exports = {
     },
     extend: {
       colors:{
-        primary:'#1C1C1C',
+        primary:'#0B0C10',
         accent:{
-          DEFAULT: '#FFCC00',
-          hover: '#CC9900',
+          DEFAULT: '#66FCF1',
+          hover: '#45A29E',
         }
       },
       keyframes: {
