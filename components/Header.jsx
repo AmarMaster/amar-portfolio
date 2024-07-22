@@ -19,8 +19,8 @@ const Header = () => {
         {/* desktop nav */}
         <div className="hidden xl:flex items-center gap-8">
           <Nav />
-          <Link href="/contact">
-            <Button>Hire Me</Button>
+          <Link href="https://calendly.com/amarmaster">
+            <Button>Meet with Me</Button>
           </Link>
         </div>
 
@@ -28,7 +28,6 @@ const Header = () => {
         <div className="xl:hidden">
           <MobileNav />
         </div>
-        
       </div>
     </header>
   );

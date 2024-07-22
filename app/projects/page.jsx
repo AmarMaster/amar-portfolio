@@ -22,24 +22,26 @@ import WorkSliderBtns from "@/components/ui/WorkSliderBtns";
 const projects = [
   {
     num: "01",
-    category: "frontend",
+    category: "Equity Scraper",
     title: "project 1",
-    description: "blah blah",
-    stack: [{ name: "Html 5" }, { name: "Css3" }, { name: "Javascript" }],
-    image: "/",
-    github: "",
-  },
-  {
-    num: "02",
-    category: "web scraper",
-    title: "project 2",
-    description: "blah blah blah",
+    description:
+      "Engineered a sophisticated stock data scraper leveraging Python, BeautifulSoup, and Pandas to aggregate, analyze, and visualize stock market data. Implemented advanced technical indicators including Moving Average, RSI, Bollinger Bands, and MACD for comprehensive market analysis, achieving an 85% accuracy in trend prediction. Developed automated daily updates and historical data management, reducing manual data handling time by 80%. Created dynamic and insightful visualizations and automated data processing tasks, enhancing the overall analysis workflow. Ensured robust data analysis and error handling mechanisms, reducing the error rate to less than 2%.",
     stack: [
       { name: "Html 5" },
       { name: "BeautifulSoup" },
       { name: "Javascript" },
     ],
-    image: "/",
+    image: "/media/NVIDIA-results.png",
+    github: "",
+  },
+  {
+    num: "02",
+    category: "Lateral Farming",
+    title: "project 2",
+    description:
+      "Engineered an innovative urban agriculture system using IoT for smart farming solutions. Utilized Arduino UNO for automated control and integrated sensors for precise environmental regulation. Developed an Android app using Java and Android Studio for real-time temperature and irrigation management, data observation, and user interaction. Implemented ultrasonic, light, and heat sensors for monitoring, enabling real-time crop monitoring and harvest timing notifications. Integrated natural rainwater harvesting for sustainable irrigation. Used MQTT for Arduino-app communication and Firebase for cloud-based data storage and synchronization. Designed an intuitive user interface with XML and Java.",
+    stack: [{ name: "Html 5" }, { name: "Css3" }, { name: "Javascript" }],
+    image: "/media/lettuce+vines.jpg",
     github: "",
   },
   {

@@ -1,5 +1,7 @@
 "use client";
 
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+
 import {
   FaPython,
   FaJava,
@@ -9,6 +11,10 @@ import {
   FaReact,
   FaNodeJs,
   FaDatabase,
+  FaBrain,
+  FaChartLine,
+  FaWallet,
+  FaRobot,
 } from "react-icons/fa";
 
 import {
@@ -22,61 +28,59 @@ import {
 
 //ABOUT DATA
 const about = {
-  title: "About me",
-  description: "bleh bleh bleh",
-  info: [
-    {
-      fieldname: "Name",
-      fieldValue: "Amar Master",
-    },
-    {
-      fieldname: "Phone (US)",
-      fieldValue: "(+1) 413-949-3383",
-    },
-    {
-      fieldname: "Phone (India)",
-      fieldValue: "+91 96533-51363",
-    },
-    {
-      fieldname: "Email",
-      fieldValue: "amar.master.work@gmail.com",
-    },
-    {
-      fieldname: "Experience",
-      fieldValue: "2 years",
-    },
-    {
-      fieldname: "Languages",
-      fieldValue: "English Gujarati Hindi Marathi",
-    },
-  ],
+  title: "About me...",
+  description:
+    "I was raised in Mumbai IN for the first 18 years of my life. As a teenager, I devoted my extra time into robotics and computer engineering principles where I developed a passion for coding!",
+  description1:
+    "Apart from coding I enjoy keeping up my physical fitness through weightlifting and boxing. I am also an avid chess player and am always open to a game!",
+  decription2: "Reach out to me if you want to work on something cool!",
 };
 
+//INFO DATA
+const info = [
+  {
+    icon: <FaPhoneAlt />,
+    title: "Phone (United States)",
+    description: "(+1) 413 949 3383",
+  },
+  {
+    icon: <FaPhoneAlt />,
+    title: "Phone (India)",
+    description: "(+91) 96533-51363",
+  },
+  {
+    icon: <FaEnvelope />,
+    title: "Email",
+    description: "amar.master.work@gmail.com",
+  },
+  {
+    icon: <FaMapMarkerAlt />,
+    title: "Address",
+    description: "#2007, 181 Fearing Street, Amherst, MA",
+  },
+];
+
 //INTERESTS DATA
-const experience = {
+const interests = {
   icon: "/assets/resume/badge.svg",
-  title: "My experience:",
-  description: "bleh bleh bleh",
+  title: "Interests!",
+  description: "Let's work on something in:",
   items: [
     {
-      company: "Tech Solutions iNC",
-      position: "position",
-      duration: "2022 - Present",
+      icon: <FaBrain />,
+      title: "Artificial Intelligence & Machine Learning",
     },
     {
-      company: "Tech Solutions iNC",
-      position: "position",
-      duration: "2022 - Present",
+      icon: <FaChartLine />,
+      title: "Data Science and Analytics",
     },
     {
-      company: "Tech Solutions iNC",
-      position: "position",
-      duration: "2022 - Present",
+      icon: <FaWallet />,
+      title: "Financial Technology",
     },
     {
-      company: "Tech Solutions iNC",
-      position: "position",
-      duration: "2022 - Present",
+      icon: <FaRobot />,
+      title: "Robotics & Embedded Systems",
     },
   ],
 };
@@ -84,25 +88,26 @@ const experience = {
 //EDUCATION DATA
 const education = {
   icon: "/assets/resume/cap.svg",
-  title: "My education:",
-  description: "bleh bleh bleh",
+  title: "Education.",
+  description:
+    '"Live as if you were to die tomorrow. Learn as if you were to live forever." ~ Mahatma Gandhi',
   items: [
     {
-      institution: "UMass",
-      degree: "BS CS",
-      duration: "2022 - 2026",
+      institution: "University of Massachusetts Amherst",
+      degree: "BSc Computer Science",
+      duration: "Exp. Graduation 2026",
     },
     {
-      institution: "UMass",
-      degree: "BS Math",
-      duration: "2022 - 2026",
+      institution: "University of Massachusetts Amherst",
+      degree: "BSc Mathematics ~ Statistics and Data Science",
+      duration: "Exp. Graduation 2026",
     },
   ],
 };
 
 //SKILLS
 const skills = {
-  title: "My skills:",
+  title: "Skills:",
   description:
     "Here are some of the technologies and tools I have experience with:",
   skillList: [
@@ -135,7 +140,7 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
 
-const Resume = () => {
+const Information = () => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -153,7 +158,7 @@ const Resume = () => {
           <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
             <TabsTrigger value="about me">About Me</TabsTrigger>
             <TabsTrigger value="education">Education</TabsTrigger>
-            <TabsTrigger value="experience">Experience</TabsTrigger>
+            <TabsTrigger value="interests">Interests</TabsTrigger>
             <TabsTrigger value="skills">Skills</TabsTrigger>
           </TabsList>
 
@@ -167,21 +172,27 @@ const Resume = () => {
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{about.title}</h3>
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
-                  {about.description}
+                  {about.description} <br />
+                  {about.description1} <br />
+                  {about.decription2}
                 </p>
-                <ul className="grid gfrid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[820px] mx-auto xl:mx-0">
-                  {about.info.map((item, index) => {
-                    return (
-                      <li
-                        key={index}
-                        className="flex items-center justify-center xl:justify-start gap-4"
-                      >
-                        <span className="text-white/60">{item.fieldname}</span>
-                        <span className="text-xl">{item.fieldValue}</span>
-                      </li>
-                    );
-                  })}
-                </ul>
+                <div className="flex-1 flex items-center xl:justify-start order-1 xl:order-none mb-8 xl:mb-0 ">
+                  <ul className="flex flex-col gap-10">
+                    {info.map((item, index) => {
+                      return (
+                        <li key={index} className="flex items-center gap-6">
+                          <div className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-[#1F2833] text-accent rounded-md flex items-center justify-center">
+                            <div className="text-[28px]">{item.icon}</div>
+                          </div>
+                          <div className="flex-1">
+                            <p className="text-white/60">{item.title}</p>
+                            <h3 className="text-xl">{item.description}</h3>
+                          </div>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
               </div>
             </TabsContent>
             {/* education */}
@@ -197,7 +208,7 @@ const Resume = () => {
                       return (
                         <li
                           key={index}
-                          className="bg-[#1F2833] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center lg:items-start gap-1"
+                          className="bg-[#1F2833] h-[700] py-6 px-10 rounded-xl flex flex-col justify-center lg:items-start gap-1"
                         >
                           <span className="text-accent">{item.duration}</span>
                           <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
@@ -215,35 +226,29 @@ const Resume = () => {
                 </ScrollArea>
               </div>
             </TabsContent>
-            {/* experience */}
-            <TabsContent value="experience" className="w-full">
+            {/* interests */}
+            <TabsContent value="interests" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                <h3 className="text-4xl font-bold">{experience.title}</h3>
+                <h3 className="text-4xl font-bold">{interests.title}</h3>
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
-                  {experience.description}
+                  {interests.description}
                 </p>
-                <ScrollArea className="h-[400px]">
-                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
-                    {experience.items.map((item, index) => {
+                <div className="flex-1 flex items-center xl:justify-start order-1 xl:order-none mb-8 xl:mb-0 ">
+                  <ul className="flex flex-col gap-10">
+                    {interests.items.map((item, index) => {
                       return (
-                        <li
-                          key={index}
-                          className="bg-[#1F2833] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center lg:items-start gap-1"
-                        >
-                          <span className="text-accent">{item.duration}</span>
-                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
-                            {item.position}
-                          </h3>
-                          <div className="flex items-center gap-3">
-                            {/* dot */}
-                            <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                            <p className="text-white/60">{item.company}</p>
+                        <li key={index} className="flex items-center gap-6">
+                          <div className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-[#1F2833] text-accent rounded-md flex items-center justify-center">
+                            <div className="text-[28px]">{item.icon}</div>
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="text-xl">{item.title}</h3>
                           </div>
                         </li>
                       );
                     })}
                   </ul>
-                </ScrollArea>
+                </div>
               </div>
             </TabsContent>
             {/* skills */}
@@ -286,4 +291,4 @@ const Resume = () => {
   );
 };
 
-export default Resume;
+export default Information;

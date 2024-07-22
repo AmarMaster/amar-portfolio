@@ -6,7 +6,7 @@ import Link from "next/link";
 const experiences = [
   {
     num: "01",
-    title: "Blue Dome Technologies",
+    title: "Blue Dome",
     description: "Software Engineering Intern ~ Jun 2024 - Present ~ Remote",
     href: "https://bluedometech.com",
   },
@@ -25,7 +25,7 @@ const experiences = [
   {
     num: "04",
     title: "Science Kidz Labs",
-    description: "Robotics Mentor ~ May 2018 - Sep 2021 ~ On-Site",
+    description: "Robotics Engineer ~ May 2018 - Sep 2021 ~ On-Site",
     href: "https://www.linkedin.com/company/sciencekidz/",
   },
 ];
