@@ -2,7 +2,6 @@
   Portfolio Website<br/>
   <a href="https://amarmaster.vercel.app/" target="_blank">amarmaster.com</a>
 </h2>
-<br/>
 
 ## Built With
 
@@ -39,7 +38,7 @@ Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.
 
-## Deployment
+## 🛜 Deployment
 You can deploy this website straight from your github repoitory using vercel. You can also set up vercel analytics to help acquire data regarding your website.
 
 ## Usage Instructions
