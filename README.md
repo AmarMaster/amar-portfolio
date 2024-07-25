@@ -47,6 +47,6 @@ You can deploy this website straight from your github repoitory using vercel. Yo
 Open the project folder and Navigate to `/src/components/`. <br/>
 You will find all the components used and you can edit your information accordingly.
 
-## Show some love
+## Show some Love
 
 Give a ⭐ if you like this website!
