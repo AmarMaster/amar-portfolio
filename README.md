@@ -10,7 +10,7 @@ My personal portfolio <a href="https://amarmaster.vercel.app/" target="_blank">a
 
 This project was built using these technologies.
 
-- React.js
+- Next.js
 - Node.js
 - Express.js
 - CSS3
