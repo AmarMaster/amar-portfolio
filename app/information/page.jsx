@@ -64,7 +64,7 @@ const info = [
 const interests = {
   icon: "/assets/resume/badge.svg",
   title: "Interests!",
-  description: "Let's work on something in:",
+  description: '"Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do." ~ Steve Jobs',
   items: [
     {
       icon: <FaBrain />,
@@ -109,7 +109,7 @@ const education = {
 const skills = {
   title: "Skills:",
   description:
-    "Here are some of the technologies and tools I have experience with:",
+    '"Strive not to be a success, but rather to be of value." ~ Albert Einstein',
   skillList: [
     { icon: <FaPython />, name: "Python" },
     { icon: <FaJava />, name: "Java" },
